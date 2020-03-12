@@ -10,6 +10,7 @@ async function build() {
   let csv = fs.readFileSync(DATA_INDEX.DATA.path, 'utf8');
   let { data } = Papa.parse(csv, { skipEmptyLines: true, header: true });
   let assetCount = 0;
+  data = data.filter((d) => d.id && d.Title);
   for (entry of data) {
     let id = entry['id'];
     // console.log(id);
