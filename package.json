@@ -1,0 +1,22 @@
+{
+  "name": "whistle-sender-utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "update": "yarn fetch && yarn build ",
+    "build": "node ./utils/build.js",
+    "fetch": "node ./utils/fetch.js",
+    "deploy": "git add -A && git commit -m \"deploy\" && git push"
+  },
+  "dependencies": {
+    "await-stream-ready": "^1.0.1",
+    "diff": "^4.0.2",
+    "fs-extra": "^8.1.0",
+    "node-fetch": "^2.6.0",
+    "papaparse": "^5.1.1"
+  },
+  "devDependencies": {
+    "fs-extra-cli": "^0.0.4"
+  }
+}
