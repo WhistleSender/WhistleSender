@@ -17,11 +17,12 @@ async function build() {
     if (id !== '') {
       let asset = ASSETS.find((a) => a.split('.')[0] === id);
       if (!asset) {
+        entry['Screenshot / Other Assets'] = ``;
         // console.log(`Asset Missing: ${id}`);
       } else {
+        entry['Screenshot / Other Assets'] = `${PUBLIC_PATH}${asset}`;
         assetCount++;
       }
-      entry['Screenshot / Other Assets'] = `${PUBLIC_PATH}${asset}`;
     }
   }
   csv = Papa.unparse(data);
