@@ -7,7 +7,7 @@
     "update": "yarn fetch && yarn build ",
     "build": "node ./utils/build.js",
     "fetch": "node ./utils/fetch.js",
-    "deploy": "git add -A && git commit -m \"deploy\" && git push"
+    "deploy": "git add -A && git commit -m \"build\" && git push"
   },
   "dependencies": {
     "await-stream-ready": "^1.0.1",
