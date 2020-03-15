@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "update": "yarn fetch && yarn build ",
-    "build": "./utils/convert_and_compress_assets.bash && node ./utils/build.js",
+    "build": "./utils/convert_and_compress_assets.bash || node ./utils/build.js",
     "fetch": "node ./utils/fetch.js",
     "deploy": "git add -A && git commit -m \"build\" && git push"
   },
