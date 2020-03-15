@@ -10,10 +10,10 @@ async function build() {
   let csv = fs.readFileSync(DATA_INDEX.DATA.path, 'utf8');
   let { data } = Papa.parse(csv, { skipEmptyLines: true, header: true });
   let assetCount = 0;
-  data = data.filter((d) => d.id && d.Title);
-  for (entry of data) {
+  console.log(data);
+
+  for (const [index, entry] of data.entries()) {
     let id = entry['id'];
-    // console.log(id);
     if (id !== '') {
       let asset = ASSETS.find((a) => a.split('.')[0] === id);
       if (!asset) {
@@ -25,6 +25,7 @@ async function build() {
       }
     }
   }
+  data = data.filter((d) => d.id && d.Title);
   csv = Papa.unparse(data);
   fs.writeFileSync(DATA_INDEX.DATA.path, csv);
   console.log(`Build CSV succeed! Assets Found: ${assetCount}/${data.length}.`);
